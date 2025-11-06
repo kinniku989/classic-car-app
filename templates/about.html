@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>当サイトについて - クラシックカー専門サイト</title>
+  <style>
+    body { font-family: sans-serif; margin: 0; background-color: #f4f4f4; color: #333; }
+    header { background-color: #333; color: white; padding: 1rem; }
+    .header-content { max-width: 900px; margin: auto; display: flex; justify-content: space-between; align-items: center; }
+    .header-content a { color: white; text-decoration: none; }
+    .container { max-width: 900px; margin: 20px auto; padding: 20px; background-color: white; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    h1, h2, h3 { border-bottom: 2px solid #333; padding-bottom: 10px; }
+    p { line-height: 1.8; }
+    .mission { background-color: #e9f5ff; padding: 20px; border-left: 5px solid #007bff; margin: 20px 0; }
+    .mechanic-profiles { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px; }
+    .profile-card { text-align: center; }
+    .profile-card img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 3px solid #ddd; }
+    .profile-card h4 { margin: 10px 0 5px; }
+    .profile-card .title { font-size: 0.9em; color: #555; }
+    .criteria-section { margin-top: 30px; }
+    .criteria-category { margin-top: 20px; }
+    .criteria-category h4 { border-bottom: none; background-color: #f8f8f8; padding: 10px; border-radius: 5px; }
+    .criteria-list { list-style: none; padding-left: 20px; }
+    .criteria-list li { padding: 5px 0; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-content">
+      <a href="{{ url_for('index') }}">
+        <h1>クラシックカー専門サイト</h1>
+      </a>
+      <a href="{{ url_for('index') }}">← 一覧に戻る</a>
+    </div>
+  </header>
+
+  <div class="container">
+    <h2>私たちの約束 - 不安を、安心と興奮へ</h2>
+    <div class="mission">
+      <p>
+        <strong>「あの頃、憧れた一台を手に入れたい。」</strong><br>
+        クラシックカーは単なる移動手段ではありません。それは、夢であり、情熱であり、人生を豊かにするパートナーです。
+        しかし、その購入には「本当にこの個体で大丈夫だろうか？」「後から高額な修理費がかかるのではないか？」といった大きな不安がつきまといます。
+      </p>
+      <p>
+        私たちは、その不安を徹底的に取り除くために生まれました。
+        <strong>利益を優先する販売店の視点ではなく、未来のオーナーの視点に立った第三者</strong>として、すべての車両を経験豊富な専門メカニックが直接評価します。
+        隠れた不具合、将来のリスク、そしてその個体が持つ本来の輝き。そのすべてを包み隠さずお伝えすることをお約束します。
+      </p>
+    </div>
+
+    <h2>評価メカニック紹介</h2>
+    <div class="mechanic-profiles">
+      <div class="profile-card">
+        <img src="{{ url_for('static', filename='images/mechanic1.jpg') }}" alt="チーフメカニック 佐藤">
+        <h4>佐藤 健一 (Sato Kenichi)</h4>
+        <p class="title">チーフメカニック / エンジン・駆動系スペシャリスト</p>
+        <p style="text-align: left;">元国内GT選手権のレースメカニック。80-90年代の国産スポーツカーのエンジンを知り尽くす。彼の診断にかかれば、エンジンの鼓動からその車の過去と未来が見える。「数字だけでなく、五感で車の声を聞く」が信条。</p>
+      </div>
+      <div class="profile-card">
+        <img src="{{ url_for('static', filename='images/mechanic2.jpg') }}" alt="メカニック 田中">
+        <h4>田中 誠 (Tanaka Makoto)</h4>
+        <p class="title">シャシー・足回り担当 /レストア職人</p>
+        <p style="text-align: left;">サビ一つ見逃さない鋭い眼光を持つ、フレームと足回りの専門家。数々の名車をドンガラ状態から新車同様に蘇らせてきた経験を持つ。「車の本当の価値は、見えない骨格に宿る」と語り、ミリ単位の歪みも見抜く。</p>
+      </div>
+    </div>
+    
+    <div class="criteria-section">
+      <h2>詳細な評価基準</h2>
+      <p>私たちは、以下の多岐にわたる項目を10段階で厳しくチェックし、車両の状態を客観的に評価します。</p>
+      
+      <div class="criteria-category">
+        <h4>🛞 足回り・タイヤ系</h4>
+        <ul class="criteria-list">
+          <li>タイヤの残り溝・状態（ヒビ・片減り）</li>
+          <li>ホイールの歪みや損傷</li>
+          <li>ショックア_ソーバー（ダンパー）</li>
+          <li>スプリング（サス）</li>
+          <li>アライメント状態（車検時確認・試走評価）</li>
+          <li>ブッシュ類（アーム、スタビライザーなど）</li>
+          <li>ハブベアリングのガタ・異音</li>
+        </ul>
+      </div>
+
+      <div class="criteria-category">
+        <h4>🛠️ 駆動系・足回りの内部</h4>
+        <ul class="criteria-list">
+          <li>ドライブシャフトブーツ＆ジョイント（切れ、グリス漏れ）</li>
+          <li>デフオイル漏れ・デフの異音（前後）</li>
+          <li>クラッチ（ミッション車）</li>
+          <li>トルコン（AT車）</li>
+          <li>ミッション本体（シフトの入り、異音）</li>
+          <li>トランスファー（4WD車）</li>
+        </ul>
+      </div>
+
+      <div class="criteria-category">
+        <h4>🔧 ブレーキ系</h4>
+        <ul class="criteria-list">
+          <li>ブレーキパッド残量</li>
+          <li>ブレーキローターの状態（摩耗・段付き・錆）</li>
+          <li>ブレーキホース（ひび割れ）</li>
+          <li>マスターバック＆マスターシリンダー（踏み応え・液漏れ）</li>
+          <li>キャリパーの固着や動作</li>
+        </ul>
+      </div>
+
+      <div class="criteria-category">
+        <h4>🔋 エンジン・冷却系</h4>
+        <ul class="criteria-list">
+          <li>エンジン本体の状態（異音・振動・吹け上がり）</li>
+          <li>エンジンオイル漏れ・滲み</li>
+          <li>ラジエーターの劣化・漏れ</li>
+          <li>ラジエーターホースの硬化・ひび割れ</li>
+          <li>冷却ファンの動作</li>
+          <li>サーモスタットの動作</li>
+          <li>ウォーターポンプの水漏れ・異音</li>
+        </ul>
+      </div>
+
+      <!-- 他のカテゴリも同様に追加 -->
+
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ car.name }} - 詳細</title>
+  <style>
+    body { font-family: sans-serif; margin: 0; background-color: #f4f4f4; }
+    header { background-color: #333; color: white; padding: 1rem; }
+    .container { max-width: 900px; margin: 20px auto; padding: 20px; background-color: white; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .car-image { width: 100%; border-radius: 8px; margin-bottom: 20px; }
+    .car-main-info { display: flex; justify-content: space-between; align-items: flex-start; }
+    .car-title h1 { margin: 0; }
+    .car-title p { font-size: 1.5rem; font-weight: bold; color: #d9534f; margin: 10px 0 0; }
+    .favorite-btn { display: inline-block; padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px; }
+    .favorite-btn.active { background-color: #f0ad4e; }
+    .spec-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    .spec-table th, .spec-table td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+    .spec-table th { background-color: #f8f8f8; width: 120px; }
+    .section { margin-bottom: 30px; }
+    .section h2 { border-bottom: 2px solid #333; padding-bottom: 10px; }
+    .evaluation-table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+    .evaluation-table th, .evaluation-table td { border: 1px solid #ddd; padding: 12px; }
+    .evaluation-table th { background-color: #f8f8f8; }
+    .score-bar-container { background-color: #e9ecef; border-radius: 5px; }
+    .score-bar { height: 20px; background-color: #007bff; border-radius: 5px; text-align: right; padding-right: 5px; color: white; line-height: 20px; }
+    .prediction-box { background-color: #fef8e7; border: 1px solid #fdf0c5; padding: 15px; margin-top: 15px; border-radius: 5px; }
+    .parts-list { list-style: none; padding: 0; }
+    .parts-list li { background-color: #e9f5ff; padding: 8px; border-radius: 4px; margin-bottom: 5px; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div style="max-width: 900px; margin: auto; display: flex; justify-content: space-between; align-items: center;">
+      <span><a href="{{ url_for('index') }}" style="color: white; text-decoration: none;">クラシックカー専門サイト</a></span>
+      <a href="{{ url_for('about') }}" style="color: white; text-decoration: none; margin: 0 20px;">当サイトについて</a>
+      <a href="{{ url_for('index') }}" style="color: white; text-decoration: none;">← 一覧に戻る</a>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="car-main-info">
+      <div class="car-title">
+        <h1>{{ car.name }}</h1>
+        <p>{{ car.price }}</p>
+      </div>
+      <a href="{{ url_for('toggle_favorite', car_id=car.id) }}" 
+         class="favorite-btn {% if is_favorite %}active{% endif %}">
+        {% if is_favorite %}★ お気に入り解除{% else %}☆ お気に入りに登録{% endif %}
+      </a>
+    </div>
+
+    <img class="car-image" src="{{ url_for('static', filename=car.image) }}" alt="{{ car.name }}">
+    
+    <p>{{ car.summary }}</p>
+
+    <table class="spec-table">
+      <tr>
+        <th>年式</th><td>{{ car.year }}</td>
+        <th>走行距離</th><td>{{ car.mileage }}</td>
+      </tr>
+      <tr>
+        <th>外装評価</th><td>{{ car.evaluation.exterior }} / 10</td>
+        <th>内装評価</th><td>{{ car.evaluation.interior }} / 10</td>
+      </tr>
+      <tr>
+        <th colspan="2">総合評価</th>
+        <td colspan="2" style="font-size: 1.2rem; font-weight: bold;">{{ car.evaluation.overall }} / 10</td>
+      </tr>
+    </table>
+
+    <div class="section">
+      <h2>メカニック評価詳細</h2>
+      {% for category_name, items in car.evaluation.parts.items() %}
+        <h4>
+          {% if category_name == 'suspension_tires' %}🛞 足回り・タイヤ系
+          {% elif category_name == 'drivetrain' %}🛠️ 駆動系
+          {% elif category_name == 'brakes' %}🔧 ブレーキ系
+          {% elif category_name == 'engine_cooling' %}🔋 エンジン・冷却系
+          {% elif category_name == 'intake_exhaust_electrical' %}🔌 吸排気・電装系
+          {% endif %}
+        </h4>
+        <table class="evaluation-table">
+          {% for item in items %}
+          <tr>
+            <th style="width: 40%;">{{ item.name }}</th>
+            <td style="width: 60%;">
+              <div class="score-bar-container">
+                <!-- ▼▼▼ ここが修正箇所です ▼▼▼ -->
+                <div class="score-bar" style="width: {{ item.score * 10 }}%;">{{ item.score }}</div>
+                <!-- ▲▲▲ ここが修正箇所です ▲▲▲ -->
+              </div>
+            </td>
+          </tr>
+          {% endfor %}
+        </table>
+      {% endfor %}
+    </div>
+
+    <div class="section">
+      <h2>将来の修理費用予測</h2>
+      <div class="prediction-box">
+        <p><strong>3ヶ月後:</strong> {{ car.future_cost_prediction['3_months'] }}</p>
+        <p><strong>1年後:</strong> {{ car.future_cost_prediction['1_year'] }}</p>
+        <p><strong>5年後:</strong> {{ car.future_cost_prediction['5_years'] }}</p>
+      </div>
+    </div>
+    
+    <div class="section">
+      <h2>装着済み社外部品</h2>
+      <ul class="parts-list">
+        {% for part in car.aftermarket_parts %}
+          <li>{{ part }}</li>
+        {% else %}
+          <li>装着されている社外部品はありません。</li>
+        {% endfor %}
+      </ul>
+    </div>
+
+  </div>
+
+</body>
+</html>

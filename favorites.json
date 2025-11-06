@@ -1,0 +1,98 @@
+[
+  {
+    "id": 3,
+    "name": "ユーノス ロードスター(NA)",
+    "price": "200万円",
+    "year": "1998年",
+    "mileage": "15.0万km",
+    "image": "images/naロードスター.jpg",
+    "summary": "ライトウェイトの2シーターオープン。エンジンオーバーホール済みで機関良好。人馬一体を楽しめる一台。",
+    "evaluation": {
+      "overall": 8,
+      "exterior": 7,
+      "interior": 9,
+      "parts": {
+        "suspension_tires": [
+          {
+            "name": "タイヤの残り溝・状態",
+            "score": 6
+          },
+          {
+            "name": "ホイールの歪みや損傷",
+            "score": 7
+          },
+          {
+            "name": "ショックアブソーバー",
+            "score": 5
+          },
+          {
+            "name": "ブッシュ類",
+            "score": 5
+          }
+        ],
+        "drivetrain": [
+          {
+            "name": "クラッチ",
+            "score": 7
+          },
+          {
+            "name": "ミッション本体",
+            "score": 8
+          },
+          {
+            "name": "デフオイル漏れ・異音",
+            "score": 9
+          }
+        ],
+        "brakes": [
+          {
+            "name": "ブレーキパッド残量",
+            "score": 8
+          },
+          {
+            "name": "ブレーキローターの状態",
+            "score": 7
+          }
+        ],
+        "engine_cooling": [
+          {
+            "name": "エンジン本体の状態",
+            "score": 8
+          },
+          {
+            "name": "エンジンオイル漏れ・滲み",
+            "score": 6
+          },
+          {
+            "name": "ラジエーターの劣化・漏れ",
+            "score": 7
+          }
+        ],
+        "intake_exhaust_electrical": [
+          {
+            "name": "マフラー・排気漏れ",
+            "score": 7
+          },
+          {
+            "name": "バッテリーの状態",
+            "score": 8
+          },
+          {
+            "name": "オルタネーター",
+            "score": 7
+          }
+        ]
+      }
+    },
+    "future_cost_prediction": {
+      "3_months": "基本的なメンテナンスのみで約1万円",
+      "1_year": "足回りのリフレッシュ（ブッシュ、ショック）,ホロ交換を推奨。約35万円",
+      "5_years": "エンジン本体のオーバーホールも視野に。約50-80万円"
+    },
+    "aftermarket_parts": [
+      "社外マフラー",
+      "社外車高調",
+      "MOMO製ステアリング"
+    ]
+  }
+]

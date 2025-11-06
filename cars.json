@@ -1,0 +1,310 @@
+[
+  {
+    "id": 1,
+    "name": "トヨタ スプリンタートレノ AE86 GT-APEX",
+    "price": "350万円",
+    "year": "1985年",
+    "mileage": "15.2万km",
+    "image": "images/ae86.jpg",
+    "summary": "伝説的な人気を誇るハチロク。メカニックによる徹底的なチェック済み。エンジンは快調で、足回りもリフレッシュ済み。すぐに走りを楽しめる一台です。",
+    "evaluation": {
+      "overall": 8,
+      "exterior": 7,
+      "interior": 6,
+      "parts": {
+        "suspension_tires": [
+          { "name": "タイヤの残り溝・状態", "score": 8 },
+          { "name": "ホイールの歪みや損傷", "score": 9 },
+          { "name": "ショックアブソーバー", "score": 7 },
+          { "name": "ブッシュ類", "score": 6 }
+        ],
+        "drivetrain": [
+          { "name": "クラッチ", "score": 8 },
+          { "name": "ミッション本体", "score": 9 },
+          { "name": "デフオイル漏れ・異音", "score": 10 }
+        ],
+        "brakes": [
+          { "name": "ブレーキパッド残量", "score": 7 },
+          { "name": "ブレーキローターの状態", "score": 8 }
+        ],
+        "engine_cooling": [
+          { "name": "エンジン本体の状態", "score": 9 },
+          { "name": "エンジンオイル漏れ・滲み", "score": 7 },
+          { "name": "ラジエーターの劣化・漏れ", "score": 8 }
+        ],
+        "intake_exhaust_electrical": [
+          { "name": "マフラー・排気漏れ", "score": 9 },
+          { "name": "バッテリーの状態", "score": 10 },
+          { "name": "オルタネーター", "score": 8 }
+        ]
+      }
+    },
+    "future_cost_prediction": {
+      "3_months": "軽微なメンテナンス（オイル交換など）で約1万円",
+      "1_year": "消耗品（ブッシュ類、タイヤなど）の交換で約10万円",
+      "5_years": "クラッチ交換やサスペンションのオーバーホール時期の可能性があり、約30-50万円"
+    },
+    "aftermarket_parts": [
+      "フジツボ製エキゾーストマニホールド",
+      "HKS製エアクリーナー",
+      "TRD製ショックアブソーバー",
+      "ワタナベ製アルミホイール"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "日産 シルビア S13 K's",
+    "price": "280万円",
+    "year": "1991年",
+    "mileage": "10.0万km",
+    "image": "images/s13.jpg",
+    "summary": "ドリフトシーンで人気のS13シルビア。ターボエンジンは力強く、カスタムベースとしても最適。内外装ともに年式相応のコンディションです。",
+    "evaluation": {
+      "overall": 7,
+      "exterior": 6,
+      "interior": 5,
+      "parts": {
+        "suspension_tires": [
+          { "name": "タイヤの残り溝・状態", "score": 6 },
+          { "name": "ホイールの歪みや損傷", "score": 7 },
+          { "name": "ショックアブソーバー", "score": 5 },
+          { "name": "ブッシュ類", "score": 5 }
+        ],
+        "drivetrain": [
+            { "name": "クラッチ", "score": 7 },
+            { "name": "ミッション本体", "score": 8 },
+            { "name": "デフオイル漏れ・異音", "score": 9 }
+        ],
+        "brakes": [
+            { "name": "ブレーキパッド残量", "score": 8 },
+            { "name": "ブレーキローターの状態", "score": 7 }
+        ],
+        "engine_cooling": [
+            { "name": "エンジン本体の状態", "score": 8 },
+            { "name": "エンジンオイル漏れ・滲み", "score": 6 },
+            { "name": "ラジエーターの劣化・漏れ", "score": 7 }
+        ],
+        "intake_exhaust_electrical": [
+            { "name": "マフラー・排気漏れ", "score": 7 },
+            { "name": "バッテリーの状態", "score": 8 },
+            { "name": "オルタネーター", "score": 7 }
+        ]
+      }
+    },
+    "future_cost_prediction": {
+      "3_months": "基本的なメンテナンスのみで約1万円",
+      "1_year": "足回りのリフレッシュ（ブッシュ、ショック)推奨。約15万円",
+      "5_years": "タービンやエンジン本体のオーバーホールも視野に。約50-80万円"
+    },
+    "aftermarket_parts": [
+      "社外マフラー",
+      "社外車高調",
+      "BRIDE製セミバケットシート"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "ユーノス ロードスター(NA)",
+    "price": "200万円",
+    "year": "1998年",
+    "mileage": "15.0万km",
+    "image": "images/naロードスター.jpg",
+    "summary": "ライトウェイトの2シーターオープン。エンジンオーバーホール済みで機関良好。人馬一体を楽しめる一台。",
+    "evaluation": {
+      "overall": 8,
+      "exterior": 7,
+      "interior": 9,
+      "parts": {
+        "suspension_tires": [
+          { "name": "タイヤの残り溝・状態", "score": 6 },
+          { "name": "ホイールの歪みや損傷", "score": 7 },
+          { "name": "ショックアブソーバー", "score": 5 },
+          { "name": "ブッシュ類", "score": 5 }
+        ],
+        "drivetrain": [
+            { "name": "クラッチ", "score": 7 },
+            { "name": "ミッション本体", "score": 8 },
+            { "name": "デフオイル漏れ・異音", "score": 9 }
+        ],
+        "brakes": [
+            { "name": "ブレーキパッド残量", "score": 8 },
+            { "name": "ブレーキローターの状態", "score": 7 }
+        ],
+        "engine_cooling": [
+            { "name": "エンジン本体の状態", "score": 8 },
+            { "name": "エンジンオイル漏れ・滲み", "score": 6 },
+            { "name": "ラジエーターの劣化・漏れ", "score": 7 }
+        ],
+        "intake_exhaust_electrical": [
+            { "name": "マフラー・排気漏れ", "score": 7 },
+            { "name": "バッテリーの状態", "score": 8 },
+            { "name": "オルタネーター", "score": 7 }
+        ]
+      }
+    },
+    "future_cost_prediction": {
+      "3_months": "基本的なメンテナンスのみで約1万円",
+      "1_year": "足回りのリフレッシュ（ブッシュ、ショック）,ホロ交換を推奨。約35万円",
+      "5_years": "エンジン本体のオーバーホールも視野に。約50-80万円"
+    },
+    "aftermarket_parts": [
+      "社外マフラー",
+      "社外車高調",
+      "MOMO製ステアリング"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "マツダ RX-7 (FC3S)",
+    "price": "480万円",
+    "year": "1991年",
+    "mileage": "8.5万km",
+    "image": "images/FC3S.jpg",
+    "summary": "13Bロータリーエンジン搭載の2代目RX-7。吸排気系を中心にチューニング済みで、扱いやすくも刺激的な走りを実現。",
+    "evaluation": {
+      "overall": 9,
+      "exterior": 8,
+      "interior": 7,
+      "parts": {
+        "suspension_tires": [
+          { "name": "タイヤの残り溝・状態", "score": 7 },
+          { "name": "ホイールの歪みや損傷", "score": 9 },
+          { "name": "ショックアブソーバー", "score": 8 },
+          { "name": "ブッシュ類", "score": 7 }
+        ],
+        "drivetrain": [
+          { "name": "クラッチ", "score": 8 },
+          { "name": "ミッション本体", "score": 8 },
+          { "name": "デフオイル漏れ・異音", "score": 9 }
+        ],
+        "brakes": [
+          { "name": "ブレーキパッド残量", "score": 7 },
+          { "name": "ブレーキローターの状態", "score": 8 }
+        ],
+        "engine_cooling": [
+          { "name": "エンジン本体の状態", "score": 9 },
+          { "name": "オイルシールの状態", "score": 7 },
+          { "name": "冷却系統", "score": 8 }
+        ],
+        "intake_exhaust_electrical": [
+          { "name": "マフラー・排気漏れ", "score": 8 },
+          { "name": "バッテリーの状態", "score": 9 },
+          { "name": "オルタネーター", "score": 8 }
+        ]
+      }
+    },
+    "future_cost_prediction": {
+      "3_months": "オイル交換・点検 約1万円",
+      "1_year": "冷却系とタービン周りの点検 約20万円",
+      "5_years": "エンジンリビルドの可能性あり 約60-100万円"
+    },
+    "aftermarket_parts": [
+      "HKS製ツインプレートクラッチ",
+      "RE雨宮マフラー",
+      "BLITZ製インタークーラー",
+      "TEIN製車高調"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "スバル インプレッサ WRX STI (GC8)",
+    "price": "380万円",
+    "year": "1999年",
+    "mileage": "10.3万km",
+    "image": "images/GC8.jpg",
+    "summary": "水平対向ターボエンジンとAWDの黄金コンビ。軽量ボディと高出力のバランスが魅力。",
+    "evaluation": {
+      "overall": 8,
+      "exterior": 8,
+      "interior": 7,
+      "parts": {
+        "suspension_tires": [
+          { "name": "タイヤの残り溝・状態", "score": 8 },
+          { "name": "ショックアブソーバー", "score": 7 },
+          { "name": "ブッシュ類", "score": 7 }
+        ],
+        "drivetrain": [
+          { "name": "クラッチ", "score": 8 },
+          { "name": "ミッション本体", "score": 9 },
+          { "name": "デフオイル漏れ・異音", "score": 9 }
+        ],
+        "brakes": [
+          { "name": "ブレーキパッド残量", "score": 8 },
+          { "name": "ローターの状態", "score": 8 }
+        ],
+        "engine_cooling": [
+          { "name": "エンジン本体", "score": 9 },
+          { "name": "タービン状態", "score": 8 },
+          { "name": "冷却系統", "score": 7 }
+        ],
+        "intake_exhaust_electrical": [
+          { "name": "マフラー・排気漏れ", "score": 8 },
+          { "name": "バッテリー", "score": 9 },
+          { "name": "オルタネーター", "score": 8 }
+        ]
+      }
+    },
+    "future_cost_prediction": {
+      "3_months": "通常点検・消耗品交換 約1.5万円",
+      "1_year": "サスペンションとタイヤ交換 約15万円",
+      "5_years": "エンジンオーバーホール検討 約50-70万円"
+    },
+    "aftermarket_parts": [
+      "STI製マフラー",
+      "CUSCO製LSD",
+      "Defiメーターセット",
+      "RAYS製TE37ホイール"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "三菱 ランサーエボリューション VI (CP9A)",
+    "price": "420万円",
+    "year": "2000年",
+    "mileage": "9.2万km",
+    "image": "images/CP9A.jpg",
+    "summary": "ラリー直系の名機、エボVI。2.0Lターボ＋4WDの究極のバランスで、刺激的なドライビングが楽しめる。",
+    "evaluation": {
+      "overall": 9,
+      "exterior": 8,
+      "interior": 7,
+      "parts": {
+        "suspension_tires": [
+          { "name": "タイヤの残り溝・状態", "score": 8 },
+          { "name": "ホイール状態", "score": 9 },
+          { "name": "ショックアブソーバー", "score": 8 }
+        ],
+        "drivetrain": [
+          { "name": "クラッチ", "score": 9 },
+          { "name": "ミッション本体", "score": 8 },
+          { "name": "デフオイル漏れ・異音", "score": 9 }
+        ],
+        "brakes": [
+          { "name": "パッド残量", "score": 8 },
+          { "name": "ローター状態", "score": 8 }
+        ],
+        "engine_cooling": [
+          { "name": "エンジン本体", "score": 9 },
+          { "name": "冷却系統", "score": 8 },
+          { "name": "タービン状態", "score": 8 }
+        ],
+        "intake_exhaust_electrical": [
+          { "name": "マフラー・排気漏れ", "score": 8 },
+          { "name": "バッテリー", "score": 9 },
+          { "name": "オルタネーター", "score": 8 }
+        ]
+      }
+    },
+    "future_cost_prediction": {
+      "3_months": "基本点検 約1万円",
+      "1_year": "駆動系の点検とブレーキ周り整備 約20万円",
+      "5_years": "エンジンリフレッシュ検討 約60万円"
+    },
+    "aftermarket_parts": [
+      "HKS EVC",
+      "BLITZインタークーラー",
+      "TEIN車高調",
+      "BBS鍛造ホイール"
+    ]
+  }
+]
