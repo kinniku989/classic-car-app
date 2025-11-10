@@ -25,10 +25,30 @@ def save_json(filename, data):
 
 @app.route("/")
 def index():
+    """トップページ：車種モデルの一覧を表示"""
     cars = load_json(CARS_FILE)
+    models = []
+    seen_models = set()
+    for car in cars:
+        if car['model'] not in seen_models:
+            models.append({
+                'name': car['model'],
+                'image': car['model_image'],
+                'full_name': car['name'].split(' ')[0] + ' ' + car['name'].split(' ')[1] # 例: トヨタ スプリンタートレノ
+            })
+            seen_models.add(car['model'])
+    return render_template("index.html", models=models)
+
+@app.route("/model/<model_name>")
+def cars_by_model(model_name):
+    """車種別一覧ページ：特定のモデルの在庫車を表示"""
+    all_cars = load_json(CARS_FILE)
+    cars_for_model = [car for car in all_cars if car['model'] == model_name]
+    
     favorites = load_json(FAVORITES_FILE)
     favorite_ids = [fav["id"] for fav in favorites]
-    return render_template("index.html", cars=cars, favorite_ids=favorite_ids)
+    
+    return render_template("cars_by_model.html", cars=cars_for_model, model_name=model_name, favorite_ids=favorite_ids)
 
 @app.route("/car/<int:car_id>")
 def car_detail(car_id):

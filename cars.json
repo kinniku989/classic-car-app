@@ -1,6 +1,8 @@
 [
   {
     "id": 1,
+    "model": "AE86",
+    "model_image": "images/model_ae86.jpg", 
     "name": "トヨタ スプリンタートレノ AE86 GT-APEX",
     "price": "350万円",
     "year": "1985年",
@@ -53,6 +55,8 @@
   },
   {
     "id": 2,
+    "model": "S13",
+    "model_image": "images/model_s13.jpg",
     "name": "日産 シルビア S13 K's",
     "price": "280万円",
     "year": "1991年",
@@ -104,6 +108,8 @@
   },
   {
     "id": 3,
+    "model": "NA_Roadster",
+    "model_image": "images/model_na.jpg",
     "name": "ユーノス ロードスター(NA)",
     "price": "200万円",
     "year": "1998年",
@@ -155,6 +161,8 @@
   },
   {
     "id": 4,
+    "model":"RX-7 FC3S",
+    "model_image":"images/model_FC3S.jpg",
     "name": "マツダ RX-7 (FC3S)",
     "price": "480万円",
     "year": "1991年",
@@ -207,6 +215,8 @@
   },
   {
     "id": 5,
+    "model": "インプレッサ　WRX STI GC8",
+    "model_image": "images/model_GC8.jpg",
     "name": "スバル インプレッサ WRX STI (GC8)",
     "price": "380万円",
     "year": "1999年",
@@ -258,6 +268,8 @@
   },
   {
     "id": 6,
+    "model": "ランサーエヴォリューション　Ⅵ　CP9A",
+    "model_image": "images/model_CP9A.jpg",
     "name": "三菱 ランサーエボリューション VI (CP9A)",
     "price": "420万円",
     "year": "2000年",

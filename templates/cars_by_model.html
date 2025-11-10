@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ model_name }} 在庫一覧</title>
+  <style>
+    /* ... (CSSはindex.htmlと同じでOK) ... */
+    body { font-family: sans-serif; margin: 0; background-color: #f4f4f4; }
+    header { background-color: #333; color: white; padding: 1rem; text-align: center; }
+    .container { max-width: 1200px; margin: 20px auto; padding: 0 15px; }
+    nav { margin-bottom: 20px; text-align: right; }
+    nav a { text-decoration: none; padding: 10px 15px; border-radius: 5px; margin-left: 10px; color: #333; }
+    nav a.button { color: #fff; background-color: #007bff; }
+    .car-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+    .car-card { background-color: white; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: relative;}
+    .car-card a { text-decoration: none; color: inherit; }
+    .car-card img { width: 100%; height: 200px; object-fit: cover; }
+    .car-card-content { padding: 15px; }
+    .car-card h3 { margin-top: 0; }
+    .favorite-star { position: absolute; top: 10px; right: 10px; font-size: 24px; color: #ccc; text-decoration: none; }
+    .favorite-star.active { color: gold; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>{{ model_name }} 在庫一覧</h1>
+  </header>
+  <div class="container">
+    <nav>
+      <a href="{{ url_for('index') }}">← 車種選択に戻る</a>
+      <a href="{{ url_for('favorites') }}" class="button">★ お気に入り</a>
+    </nav>
+    <div class="car-grid">
+      {% for car in cars %}
+        <div class="car-card">
+          <a href="{{ url_for('toggle_favorite', car_id=car.id) }}" class="favorite-star {% if car.id in favorite_ids %}active{% endif %}">★</a>
+          <a href="{{ url_for('car_detail', car_id=car.id) }}">
+            <img src="{{ url_for('static', filename=car.image) }}" alt="{{ car.name }}">
+            <div class="car-card-content">
+              <h3>{{ car.name }}</h3>
+              <p>価格: <strong>{{ car.price }}</strong></p>
+              <p>総合評価: <strong>{{ car.evaluation.overall }} / 10</strong></p>
+            </div>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</body>
+</html>
