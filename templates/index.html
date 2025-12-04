@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>クラシックカー専門サイト</title>
   <style>
-    /* ... (CSSは以前のものと同じでOK) ... */
+    /* ...  ... */
     body { font-family: sans-serif; margin: 0; background-color: #f4f4f4; }
     header { background-color: #333; color: white; padding: 1rem; text-align: center; }
     .container { max-width: 1200px; margin: 20px auto; padding: 0 15px; }
@@ -34,7 +34,7 @@
           <a href="{{ url_for('cars_by_model', model_name=model.name) }}">
             <img src="{{ url_for('static', filename=model.image) }}" alt="{{ model.full_name }}">
             <div class="car-card-content">
-              <h3>{{ model.full_name }} ({{ model.name }})</h3>
+              <h3> ({{ model.name }})</h3>
               <p>在庫を見る →</p>
             </div>
           </a>
